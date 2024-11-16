@@ -1,4 +1,4 @@
-1. Setting Up Express:
+A) 1. Setting Up Express:
 
 I created an Express application using express().
 Configured the server to listen on port 3000.
@@ -17,3 +17,67 @@ DELETE: Accepts user ID as a parameter and sends a message (logic to delete from
 4. Repetitions:
 
 There are redundant route definitions and multiple app.post handlers, which could be simplified."# project-3" 
+
+(Endpoints)
+
+B) 1. **GET `/`**
+   - **Description**: Returns a welcome message.
+   - **Response**:
+     ```json
+     {
+       "msg": "This is the message"
+     }
+     ```
+
+2. **POST `/`**
+
+   - **Description**: Accepts user data in the request body and returns it with a message.
+   - **Request Body**:
+     ```json
+     {
+       "firstName": "John",
+       "lastName": "Doe"
+     }
+     ```
+   - **Response**:
+     ```json
+     {
+       "msg": "This is the message from POST",
+       "firstName": "John",
+       "lastName": "Doe"
+     }
+     ```
+
+3. **PUT `/:id`**
+
+   - **Description**: Updates user information based on the provided `id` parameter.
+   - **Request Parameters**:
+     - `id`: ID of the user to be updated.
+   - **Request Body**:
+     ```json
+     {
+       "firstName": "UpdatedFirstName",
+       "lastName": "UpdatedLastName"
+     }
+     ```
+   - **Response**:
+
+     ```json
+     {
+       "msg": "This the message from PUT",
+       "userId": "1",
+       "firstName": "UpdatedFirstName",
+       "lastName": "UpdatedLastName"
+     }
+     ```
+
+4. **DELETE `/:id`**
+   - **Description**: Deletes a user based on the provided `id` parameter.
+   - **Request Parameters**:
+     - `id`: ID of the user to be deleted.
+   - **Response**:
+     ```json
+     {
+       "msg": "This the message from DELETE"
+     }
+     ```
