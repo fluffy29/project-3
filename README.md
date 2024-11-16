@@ -1,6 +1,6 @@
 1. Setting Up Express:
 
-You created an Express application using express().
+I created an Express application using express().
 Configured the server to listen on port 3000.
 
 2. Defining User Data:
