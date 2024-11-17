@@ -1,22 +1,23 @@
 const express = require("express");
 const router = express.Router();
-const { 
+const { checkApiKey } = require("../middleware/checkApiKey");
+const {
   getAllUsers,
-  createNewUsers,
+  createNewUser,
   updateUser,
-} = require("../controllers/usersController");
+  deleteUser,
+} = require("../controllers/usersControllers");
 
+// GET METHOD
+router.get("/users", checkApiKey, getAllUsers);
 
-// GET Method
-router.get("/users", getAllUsers)
-
-// POST Method
-app.post("/users", createNewUsers)
+// POST METHOD
+router.post("/users", checkApiKey, createNewUser);
 
 // PUT METHOD
-app.put("/users/:id", updateUser)
+router.put("/users/:id", checkApiKey, updateUser);
 
 // DELETE METHOD
-app.delete("/users/:id",  )
+router.delete("/users/:id", checkApiKey, deleteUser);
 
 module.exports = router;
