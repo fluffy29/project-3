@@ -1,10 +1,16 @@
 const express = require("express");
 const router = express.Router();
 
+const db = require("../database");
+
 // GET Method
-app.get("/", (req, res) => {
-  res.json({
-    msg: "This is the message",
+router.get("/users", (req, res) => {
+  db.all("SELECT * FROM users", [], (err, rows) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+    } else {
+      res.json(rows);
+    }
   });
 });
 
