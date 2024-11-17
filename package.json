@@ -10,6 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "node.js": "^0.0.1-security"
+    "node.js": "^0.0.1-security",
+    "sqlite3": "^5.1.7"
   }
 }
